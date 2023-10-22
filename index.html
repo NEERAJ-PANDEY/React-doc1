@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReactJs CreateElement</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root">
+
+    </div>
+
+    <script type="text/babel">
+       
+        const rootElement = document.querySelector("#root");
+        const root = ReactDOM.createRoot(rootElement);
+
+
+        function Comp1({ dts: { name }, age }) {
+            const users = [{
+                fname: "samiul",
+                lname: "khan"
+            }, {
+                fname: "piyush",
+                lname: "yadav"
+            }, {
+                fname: "Udit",
+                lname: "Singh"
+            }]
+            // return (
+            //     <div id="sec_div">
+            //         <div id="top">
+            //             <h1>Intro {age} {name}</h1>
+            //         </div>
+            //         <div id="bottom">
+            //             <p>Desc</p>
+            //             {users.map(user => {
+            //                 return <p>{`${user.fname} ${user.lname}`}</p>
+            //             })}
+
+            //         </div>
+            //     </div>
+            // )
+        }
+        function Main() {
+            const obj = {
+                name: "samiul",
+                age: 21
+            };
+            return (
+                <div>
+                    <Comp1 dts={obj} age="21" />
+                    <div id="main_div">
+                        <div id="top">
+                            <h1>Topic Covered</h1>
+                        </div>
+                        <div id="bottom">
+                            <a href="">Getting started with web</a>
+                            <p>Getting started with the web is a concise series introducing you to the practicalities of web development.</p>
+                            <a href="">HTML-Structure the  web</a>
+                            <p>HTML (HyperText Markup Language) is the code that is used to structure a web page and its content. For example, content could be structured within a set of paragraphs, a list of bulleted points, or using images and data tables. As the title suggests, this article will give you a basic understanding of HTML and its functions.</p>
+                            <a href="">CSS-Style the web</a>
+                            <p>CSS (Cascading Style Sheets) is the code that styles web content. CSS basics walks through what you need to get started. We'll answer questions like: How do I make text red? How do I make content display at a certain location in the (webpage) layout? </p>
+                        </div>
+                    </div>
+
+                </div>
+            )
+        }
+        root.render(<Main/>);
+
+
+
+
+    </script>
+
+</body>
+
+</html> 
